@@ -1,0 +1,60 @@
+<div class="min-h-screen bg-gray-50 text-gray-900">
+  <!-- Navigation Bar -->
+  <nav class="bg-white/70 backdrop-blur-md shadow-sm fixed w-full z-10 top-0 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <a routerLink="/" class="text-lg font-extrabold ">
+            00_Angular
+          </a>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+          @if (!userService.isLoggedIn()) {
+            <a routerLink="/login" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+            <a routerLink="/register" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Register</a>
+          } @else {
+            <a routerLink="/profile" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Profile</a>
+            <button (click)="logout()" class="text-red-500 hover:text-red-700 hover:bg-red-50 px-4 py-2 rounded-full text-sm font-medium transition-all">Logout</button>
+          }
+        </div>
+        
+        <!-- Mobile menu button (Simplified for now) -->
+        <div class="flex items-center sm:hidden">
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Icon when menu is closed. -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex justify-center min-h-[calc(100vh-64px)]">
+    <div class="w-full max-w-md animate-fade-in-up">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+</style>

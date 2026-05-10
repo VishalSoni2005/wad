@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registered Users</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        background-color: black;
+        color: white;
+      }
+      ul {
+        background-color: white;
+        list-style-type: none;
+        padding: 0;
+        max-width: 400px;
+      }
+      li {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+        border-left: 5px solid #007bff;
+      }
+      a {
+        display: inline-block;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #007bff;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Registered Users</h2>
+    <ul id="userList"></ul>
+    <a href="index.html">← Back to Registration</a>
+
+    <script>
+      const userList = document.getElementById("userList");
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      if (users.length === 0) {
+        userList.innerHTML = "<li>No users registered yet.</li>";
+      } else {
+        users.forEach((user) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<strong>Name:</strong> ${user.name} <br> <strong>Email:</strong> ${user.email}`;
+          userList.appendChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>

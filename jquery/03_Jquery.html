@@ -1,0 +1,82 @@
+// Create a simple Mobile Website using jQuery Mobile
+
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Mobile Website</title>
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page" id="home">
+      <div data-role="header">
+        <h1>My Mobile Website</h1>
+      </div>
+
+      <div data-role="content">
+        <h2>Welcome</h2>
+
+        <p>This is a simple mobile website using jQuery Mobile.</p>
+
+        <a href="#about" data-role="button"> About Us </a>
+
+        <a href="#contact" data-role="button"> Contact </a>
+      </div>
+
+      <div data-role="footer">
+        <h4>Mobile Website Example</h4>
+      </div>
+    </div>
+
+    <div data-role="page" id="about">
+      <div data-role="header">
+        <h1>About Us</h1>
+      </div>
+
+      <div data-role="content">
+        <p>We are learning jQuery Mobile practicals.</p>
+
+        <a href="#home" data-role="button"> Go Home </a>
+      </div>
+
+      <div data-role="footer">
+        <h4>About Page</h4>
+      </div>
+    </div>
+
+    <div data-role="page" id="contact">
+      <div data-role="header">
+        <h1>Contact Us</h1>
+      </div>
+
+      <div data-role="content">
+        <form>
+          <label>Name:</label>
+          <input type="text" placeholder="Enter Name" />
+
+          <label>Email:</label>
+          <input type="email" placeholder="Enter Email" />
+
+          <label>Message:</label>
+          <textarea placeholder="Enter Message"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+
+        <a href="#home" data-role="button"> Go Home </a>
+      </div>
+
+      <div data-role="footer">
+        <h4>Contact Page</h4>
+      </div>
+    </div>
+  </body>
+</html>

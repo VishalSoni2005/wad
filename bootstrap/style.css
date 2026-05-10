@@ -1,0 +1,33 @@
+body {
+  overflow-x: hidden;
+  background-color: #f4f6f9;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #343a40;
+}
+
+.sidebar .nav-link {
+  color: white;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.main-content {
+  padding: 0;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+}
