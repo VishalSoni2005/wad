@@ -1,7 +1,6 @@
 document.getElementById("regForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent default form submission
+  e.preventDefault(); 
 
-  // Get the user registration data
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
 
@@ -10,7 +9,6 @@ document.getElementById("regForm").addEventListener("submit", function (e) {
     email: email,
   };
 
-  // Simulate AJAX POST using fetch (sending data to a mock API)
   fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     headers: {
@@ -22,12 +20,10 @@ document.getElementById("regForm").addEventListener("submit", function (e) {
     .then((data) => {
       console.log("AJAX POST Success:", data);
 
-      // Push to array/local storage
       let usersArray = JSON.parse(localStorage.getItem("users")) || [];
       usersArray.push(userData);
       localStorage.setItem("users", JSON.stringify(usersArray));
 
-      // Data list in new page (Redirect to the display page)
       window.location.href = "display.html";
     })
     .catch((error) => {
